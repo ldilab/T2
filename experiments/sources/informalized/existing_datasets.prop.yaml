@@ -1,0 +1,5 @@
+name: ExistingDatasets-Informalized-Prop
+type: json
+kwargs:
+  path: results/informalize/existing/prop/claude-sonnet-4-5/20260125_120410/results_merged.json
+  sort_key: id

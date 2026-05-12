@@ -1,0 +1,33 @@
+description: "autoformalize existing datasets using expand_langchain"
+
+source:
+  - !inc experiments/sources/informalized/existing_datasets.prop.yaml
+
+dataset:
+  - !inc experiments/datasets/informalized/existing_datasets.prop.yaml
+
+graph:
+  entry_point: autoformalize
+  nodes:
+    - name: autoformalize
+      chains:
+        - name: formal_proof
+          dependencies: []
+          input_keys: [header, before_target_code, after_target_code, target_code_name, target_natural_language]
+          output_keys: [thoughts, formal_proof]
+          type: cot
+          kwargs:
+            n: 1
+            llm: !inc experiments/llms/litellm/general/llama3.1/8b.yaml
+            parsers:
+              - type: code_block
+            prompt:
+              type: chat
+              kwargs:
+                body_template_paths:
+                  - experiments/templates/autoformalize_wo_ref
+                system_template_paths:
+                  - experiments/templates/autoformalize_wo_ref
+  edges:
+    - pair: [autoformalize, __end__]
+      route: always

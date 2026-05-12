@@ -1,0 +1,5 @@
+name: ResearchPapers-Informalized-Prop
+type: json
+kwargs:
+  path: results/informalize/research/prop/claude-sonnet-4-5/20260125_150018/results_merged.json
+  sort_key: id

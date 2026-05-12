@@ -1,0 +1,20 @@
+{
+  "total": 377,
+  "total_questions": 400,
+  "verified": 264,
+  "pass_no_after": 337,
+  "error": 113,
+  "sorry": 0,
+  "warning": 258,
+  "exception": 0,
+  "missing": 23,
+  "pass_rate": 66.0,
+  "pass_rate_no_after": 84.25,
+  "error_rate": 28.249999999999996,
+  "sorry_rate": 0.0,
+  "warning_rate": 64.5,
+  "exception_rate": 0.0,
+  "missing_rate": 5.75,
+  "em_rate": 15.384615384615385,
+  "bleu_score": 46.14713391280529
+}

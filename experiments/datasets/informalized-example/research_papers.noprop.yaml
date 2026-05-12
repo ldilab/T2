@@ -1,0 +1,36 @@
+name: example
+type: dict
+kwargs:
+  primary_key: id
+  fields:
+    - name: id
+      source: example
+      key: id
+    - name: target_natural_language
+      source: example
+      key: target_natural_language
+
+    - name: target_code
+      source: example
+      key: target_code
+    - name: formal_language
+      source: example
+      key: formal_language
+    - name: natural_language
+      source: example
+      key: natural_language
+    - name: target_code_name
+      source: example
+      key: target_code_name
+    - name: before_target_code
+      source: example
+      key: before_target_code
+    - name: after_target_code
+      source: example
+      key: after_target_code
+    - name: header
+      source: example
+      key: header
+    - name: dataset_name
+      source: example
+      key: dataset_name

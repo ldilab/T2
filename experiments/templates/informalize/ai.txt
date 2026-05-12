@@ -1,0 +1,5 @@
+{{ thoughts }}
+
+```plaintext
+{{ target_natural_language }}
+```

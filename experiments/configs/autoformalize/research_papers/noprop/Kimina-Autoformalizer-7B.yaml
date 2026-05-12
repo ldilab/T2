@@ -1,0 +1,36 @@
+description: "autoformalize research papers using expand_langchain"
+
+source:
+  - !inc experiments/sources/raw/research_papers.nosorry.noprop.yaml
+  - !inc experiments/sources/informalized/research_papers.noprop.yaml
+  - !inc experiments/sources/informalized-example/research_papers.noprop.yaml
+
+dataset:
+  - !inc experiments/datasets/informalized/research_papers.noprop.yaml
+  - !inc experiments/datasets/informalized-example/research_papers.noprop.yaml
+
+graph:
+  entry_point: autoformalize
+  nodes:
+    - name: autoformalize
+      chains:
+        - name: formal_proof
+          dependencies: []
+          input_keys: [header, before_target_code, after_target_code, target_code_name, target_natural_language]
+          output_keys: [thoughts, formal_proof]
+          type: cot
+          kwargs:
+            n: 1
+            llm: !inc experiments/llms/litellm/custom/Kimina/Autoformalizer-7B.yaml
+            parsers:
+              - type: code_block
+            prompt:
+              type: chat
+              kwargs:
+                body_template_paths:
+                  - experiments/templates/autoformalize
+                system_template_paths:
+                  - experiments/templates/autoformalize
+  edges:
+    - pair: [autoformalize, __end__]
+      route: always

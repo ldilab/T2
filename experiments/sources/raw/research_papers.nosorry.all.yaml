@@ -1,0 +1,5 @@
+name: ResearchPapers-NoSorry-All
+type: jsonl
+kwargs:
+  path: data/final/research_papers.all.jsonl
+  sort_key: id

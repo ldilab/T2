@@ -1,0 +1,36 @@
+name: target
+type: dict
+kwargs:
+  primary_key: id
+  fields:
+  - name: id
+    source: ExistingDatasets-Informalized-Prop
+    key: id
+  - name: target_natural_language
+    source: ExistingDatasets-Informalized-Prop
+    key: target_natural_language
+  
+  - name: target_code
+    source: ExistingDatasets-Informalized-Prop
+    key: target_code
+  - name: formal_language
+    source: ExistingDatasets-Informalized-Prop
+    key: formal_language
+  - name: natural_language
+    source: ExistingDatasets-Informalized-Prop
+    key: natural_language
+  - name: target_code_name
+    source: ExistingDatasets-Informalized-Prop
+    key: target_code_name
+  - name: before_target_code
+    source: ExistingDatasets-Informalized-Prop
+    key: before_target_code
+  - name: after_target_code
+    source: ExistingDatasets-Informalized-Prop
+    key: after_target_code
+  - name: header
+    source: ExistingDatasets-Informalized-Prop
+    key: header
+  - name: dataset_name
+    source: ExistingDatasets-Informalized-Prop
+    key: dataset_name

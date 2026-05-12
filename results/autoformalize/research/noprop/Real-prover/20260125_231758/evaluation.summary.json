@@ -1,0 +1,20 @@
+{
+  "total": 2027,
+  "evaluated": 2027,
+  "verified": 459,
+  "pass_no_after": 459,
+  "error": 1421,
+  "sorry": 0,
+  "timeout": 0,
+  "exception": 147,
+  "missing": 0,
+  "warning": 0,
+  "em_rate": 0.0,
+  "bleu_score": 0.0,
+  "pass_rate": 22.644301924025655,
+  "pass_rate_no_after": 22.644301924025655,
+  "error_rate": 70.10360138135175,
+  "sorry_rate": 0.0,
+  "exception_rate": 7.252096694622595,
+  "timeout_rate": 0.0
+}

@@ -1,0 +1,31 @@
+- id: "InitialSeg.eq"
+  formal_problem: "theorem InitialSeg.eq [IsWellOrder β s] (f g : r ≼i s) (a) : f a = g a := by sorry"
+  informal_proof: "Given that \\( s \\) is a well-order on \\( \\beta \\), the type of initial segment embeddings \\( r \\preceq_i s \\) is a subsingleton. This means that any two initial segment embeddings \\( f \\) and \\( g \\) from \\( r \\) to \\( s \\) are equal. Therefore, for any element \\( a \\in \\alpha \\), we have \\( f(a) = g(a) \\). This is because the equality \\( f = g \\) implies \\( f(a) = g(a) \\) for all \\( a \\in \\alpha \\). Hence, the goal \\( f(a) = g(a) \\) is equivalent to \\( g(a) = g(a) \\), which is trivially true by the reflexive property of equality. This completes the proof."
+  formal_proof: |
+    theorem InitialSeg.eq [IsWellOrder β s] (f g : r ≼i s) (a) : f a = g a := by
+      rw [Subsingleton.elim f g]
+
+- id: "CategoryTheory.ChosenFiniteProducts.associator_inv_fst"
+  formal_problem: |
+    theorem CategoryTheory.ChosenFiniteProducts.associator_inv_fst (X Y Z : C) :
+        (α_ X Y Z).inv ≫ fst _ _ ≫ fst _ _ = fst _ _ := by sorry
+  informal_proof: "We start by noting that the theorem \"First Projection Commutes with Morphism in Chosen Finite Products\" shows that \\(\\pi_1 \\circ \\langle f, g \\rangle = f\\) and the theorem \"First Projection Composition with Lift Equals First Component\" shows that \\(\\pi_1 \\circ \\langle f, g \\rangle = f\\). Using these theorems, we can replace the composition of the inverse of the associator isomorphism \\(\\alpha_{X, Y, Z}^{-1}\\) with the first projection morphism \\(\\pi_1\\) and the morphism \\(\\langle \\pi_1, \\pi_2 \\rangle\\). This transforms our goal \\((\\alpha_{X, Y, Z}^{-1} \\circ \\pi_1 \\circ \\pi_1) = \\pi_1 \\circ \\pi_1\\) into \\(\\pi_1 \\circ \\langle \\pi_1, \\pi_2 \\rangle = \\pi_1\\).\n\nThe current goal \\(\\pi_1 \\circ \\langle \\pi_1, \\pi_2 \\rangle = \\pi_1\\) is trivially true due to the reflexive property. Therefore, the composition of the inverse of the associator isomorphism \\(\\alpha_{X, Y, Z}^{-1}\\) with the first projection morphism \\(\\pi_1\\) from \\(X \\otimes (Y \\otimes Z)\\) to \\(X\\) is equal to the composition of the first projection morphism \\(\\pi_1\\) from \\((X \\otimes Y) \\otimes Z\\) to \\(X \\otimes Y\\) with the first projection morphism \\(\\pi_1\\) from \\(X \\otimes Y\\) to \\(X\\). This completes the proof."
+  formal_proof: |
+    theorem CategoryTheory.ChosenFiniteProducts.associator_inv_fst (X Y Z : C) :
+        (α_ X Y Z).inv ≫ fst _ _ ≫ fst _ _ = fst _ _ := by
+      erw [lift_fst_assoc, lift_fst]
+      rfl
+
+- id: "CategoryTheory.OverPresheafAux.unitForward_naturality₂"
+  formal_problem: |
+    theorem CategoryTheory.OverPresheafAux.unitForward_naturality₂ {F : Cᵒᵖ ⥤ Type v} (η : F ⟶ A) (X Y : C) (f : X ⟶ Y)
+        (p : YonedaCollection (restrictedYonedaObj η) Y) :
+        unitForward η X (YonedaCollection.map₂ (restrictedYonedaObj η) f p) =
+          F.map f.op (unitForward η Y p) := by sorry
+  informal_proof: "We start by using the definition of the unit forward map \\( \\eta_X^\\ast \\) and the map induced by \\( f \\) on the Yoneda collection. Specifically, we simplify the expression \\( \\eta_X^\\ast (f^\\ast p) \\) and \\( F(f^\\mathrm{op}) (\\eta_Y^\\ast p) \\) using the definition of the unit forward map. After simplification, the equality \\( \\eta_X^\\ast (f^\\ast p) = F(f^\\mathrm{op}) (\\eta_Y^\\ast p) \\) becomes trivially true. This completes the proof.\n\n\\[\n\\eta_X^\\ast (f^\\ast p) = F(f^\\mathrm{op}) (\\eta_Y^\\ast p)\n\\]"
+  formal_proof: |
+    theorem CategoryTheory.OverPresheafAux.unitForward_naturality₂ {F : Cᵒᵖ ⥤ Type v} (η : F ⟶ A) (X Y : C) (f : X ⟶ Y)
+        (p : YonedaCollection (restrictedYonedaObj η) Y) :
+        unitForward η X (YonedaCollection.map₂ (restrictedYonedaObj η) f p) =
+          F.map f.op (unitForward η Y p) := by
+      simp [unitForward]

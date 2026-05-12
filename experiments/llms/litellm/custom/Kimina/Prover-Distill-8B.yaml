@@ -1,0 +1,6 @@
+max_tokens: 8192
+model: kimina-prover-distill-8b
+platform: litellm
+base_url: http://localhost:4000
+temperature: 0.6
+top_p: 0.95

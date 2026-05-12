@@ -1,0 +1,15 @@
+[submodule "third_party/expand_langchain"]
+	path = third_party/expand_langchain
+	url = https://github.com/ldilab/expand_langchain.git
+
+[submodule "third_party/mathlib4"]
+	path = third_party/mathlib4
+	url = https://github.com/leanprover-community/mathlib4.git
+
+[submodule "third_party/jixia"]
+    path = third_party/jixia
+    url = https://github.com/frenzymath/jixia.git
+
+[submodule "third_party/LeanDojo"]
+    path = third_party/LeanDojo
+    url = https://github.com/lean-dojo/LeanDojo.git

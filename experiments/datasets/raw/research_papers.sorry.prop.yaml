@@ -1,0 +1,32 @@
+name: target
+type: dict
+kwargs:
+  primary_key: id
+  fields:
+  - name: id
+    source: ResearchPapers-Sorry-Prop
+    key: id
+  - name: target_code
+    source: ResearchPapers-Sorry-Prop
+    key: target_code
+  - name: formal_language
+    source: ResearchPapers-Sorry-Prop
+    key: formal_language
+  - name: natural_language
+    source: ResearchPapers-Sorry-Prop
+    key: natural_language
+  - name: target_code_name
+    source: ResearchPapers-Sorry-Prop
+    key: target_code_name
+  - name: before_target_code
+    source: ResearchPapers-Sorry-Prop
+    key: before_target_code
+  - name: after_target_code
+    source: ResearchPapers-Sorry-Prop
+    key: after_target_code
+  - name: header
+    source: ResearchPapers-Sorry-Prop
+    key: header
+  - name: dataset_name
+    source: ResearchPapers-Sorry-Prop
+    key: dataset_name

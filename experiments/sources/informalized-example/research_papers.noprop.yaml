@@ -1,0 +1,5 @@
+name: example
+type: yaml
+kwargs:
+  sort_key: id
+  path: exmaples/existing-noprop.yaml

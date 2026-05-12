@@ -1,0 +1,66 @@
+<task_description>
+Your task is to provide a natural language description (that is informal proof or problem statement) for the specific Lean 4 declaration.
+Target Code Name: {{ target_code_name }}
+The declaration is part of a larger code sequence.
+
+The Code Context is provided below.
+- `Header`: Imports and open namespaces.
+- `Code Before`: Code appearing before the target.
+- `Target Code`: The specific code you need to describe/informalize.
+
+Header:
+```lean
+{{ header }}
+```
+
+Code Before:
+```lean
+{{ before_target_code }}
+```
+
+Target Code:
+```lean
+{{ target_code }}
+```
+
+Code After:
+```lean
+{{ after_target_code }}
+```
+
+<instructions>
+# Task Instructions
+
+## Overview
+You are an expert Lean 4 mathematician.
+You must provide a clear, concise, and mathematically accurate natural language description of the `Target Code`.
+- If `Target Code` is a theorem/proof, provide an informal proof.
+- If `Target Code` is a definition, provide a mathematical definition in latex.
+- Use standard mathematical terminology (TeX/LaTeX style for formulas is preferred).
+- You must not use the exact function name used in lean code. You need to describe in natural language.
+- Do not start with which function name you are translating. Just start with the informal proof or problem statement.
+
+## Output Coding Rules
+1. A **THOUGHT** section where you explain your reasoning:
+   - Analyze the `Target Code` to understand what it proves or defines.
+   - Consider the context from `Code Before` and `Code After` if relevant.
+   - Plan the natural language description.
+2. A single plaintext code block with your description.
+
+Format your responses like this:
+
+<format_example>
+THOUGHT: The target code defines a function `foo` that adds two numbers.
+I will describe it as "The function determines the sum of two integers."
+
+```plaintext
+The function determines the sum of two integers.
+```
+</format_example>
+
+**CRITICAL REQUIREMENTS:**
+- Your response SHOULD include a THOUGHT section.
+- Your response MUST include EXACTLY ONE plaintext block.
+- This block MUST contain the COMPLETELY NEW natural language description.
+- Do NOT repeat the input code.
+</instructions>

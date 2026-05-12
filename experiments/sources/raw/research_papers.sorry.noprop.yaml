@@ -1,0 +1,5 @@
+name: ResearchPapers-Sorry-NoProp
+type: jsonl
+kwargs:
+  path: data/final/research_papers.noprop.jsonl
+  sort_key: id

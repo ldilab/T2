@@ -1,0 +1,62 @@
+<task_description>
+Your task is to provide the full formal Lean 4 code for the specific declaration named `{{ target_code_name }}`.
+The declaration is part of a larger code sequence, and you must implement it to fit seamlessly into the provided context.
+
+The Code Context is provided below.
+- `Header`: Imports and open namespaces.
+- `Code Before`: Code appearing before the target.
+- `Target Code Name`: The name of the definition or theorem you need to implement.
+- `Code After`: Code appearing after the target.
+
+
+Header:
+```lean
+{{ header }}
+```
+
+Code Before:
+```lean
+{{ before_target_code }}
+```
+
+Target Code Name: {{ target_code_name }}
+
+Code After:
+```lean
+{{ after_target_code }}
+```
+
+<instructions>
+# Task Instructions
+
+## Overview
+You are an expert Lean 4 mathematician.
+You must provide the complete and correct Lean 4 implementation for `{{ target_code_name }}`.
+- If it is a theorem, provide the statement and the full proof (do not use `sorry`).
+- If it is a definition, provide the full definition.
+- Pay close attention to `Code Before` and `Code After` to infer the correct type signatures, variable names, and logical dependencies.
+- Ensure your code compiles and integrates correctly with the surrounding context.
+
+## Output Coding Rules
+1. A **THOUGHT** section where you explain your reasoning:
+   - Analyze the `Code Before` and `Code After` to deduce the purpose and signature of `{{ target_code_name }}`.
+   - Plan the implementation.
+2. A single lean code block with your implementation.
+
+Format your responses like this:
+
+<format_example>
+THOUGHT: The context shows a function `foo` is used to add two numbers.
+I will implement `foo` as a definition taking two Nats and returning their sum.
+
+```lean
+def foo (n m : Nat) : Nat := n + m
+```
+</format_example>
+
+**CRITICAL REQUIREMENTS:**
+- Your response SHOULD include a THOUGHT section.
+- Your response MUST include EXACTLY ONE lean block.
+- This block MUST contain the COMPLETELY NEW implementation for `{{ target_code_name }}`.
+- Do NOT repeat the `Header` or `Code Before` or `Code After`. Only output the code for `{{ target_code_name }}`.
+</instructions>
